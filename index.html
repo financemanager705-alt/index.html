@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Beautiful Landing — Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent1:#7c3aed; --accent2:#06b6d4; --glass: rgba(255,255,255,0.04);
+      --maxw:1100px; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:linear-gradient(180deg,var(--bg) 0%, #071029 100%); color:#e6eef8; -webkit-font-smoothing:antialiased}
+    .container{max-width:var(--maxw); margin:0 auto; padding:32px}
+
+    /* NAV */
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,var(--accent1),var(--accent2)); display:flex;align-items:center;justify-content:center;font-weight:800}
+    nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0}
+    nav a{color:rgba(230,238,248,0.9); text-decoration:none; font-weight:600; font-size:15px}
+    .cta{background:linear-gradient(90deg,var(--accent1),var(--accent2)); padding:10px 16px; border-radius:10px; font-weight:700}
+
+    /* HERO */
+    .hero{display:grid; grid-template-columns:1fr 460px; gap:28px; align-items:center; padding:40px 0}
+    .hero h1{font-size:44px; margin:0 0 14px; line-height:1.03}
+    .hero p{color:rgba(230,238,248,0.8); margin:0 0 22px}
+    .actions{display:flex; gap:12px}
+    .mockup{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:18px; padding:18px; box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+    .screen{width:420px; height:300px; border-radius:12px; background:linear-gradient(180deg,#071525, #013243); display:flex;align-items:center;justify-content:center; color:#9fe7ff; font-weight:700}
+
+    /* FEATURES */
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:30px}
+    .card{background:var(--card); padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+    .card h3{margin:0 0 8px}
+    .small{font-size:13px; color:rgba(230,238,248,0.7)}
+
+    /* FOOTER */
+    footer{margin-top:48px; padding:24px 0; border-top:1px solid rgba(255,255,255,0.03)}
+
+    /* RESPONSIVE */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .mockup .screen{width:100%; height:220px}
+      nav ul{display:none}
+    }
+
+    /* tiny interactions */
+    .btn{display:inline-block; padding:10px 14px; border-radius:10px; cursor:pointer; text-decoration:none}
+    .glass{background:var(--glass); border-radius:12px; padding:12px}
+
+  </style>
+</head>
+<body>
+  <header class="container nav">
+    <div class="brand">
+      <div class="logo">BD</div>
+      <div>
+        <div style="font-weight:800">Stockssutra.com</div>
+        <div style="font-size:12px;color:rgba(230,238,248,0.6)">Stock Market, Mutual Funds, IPO & F&O Insights</div>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#mutualfunds">Mutual Funds</a></li>
+        <li><a href="#ipo">IPO</a></li>
+        <li><a href="#fno">F&O</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="cta" href="#contact">Get Started</a>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Grow Your Wealth With Smart Finance Solutions</h1>
+        <p>Track markets, analyze investments, compare financial products, and learn practical money skills — all in one place.</p>
+        <div class="actions">
+          <a class="btn" href="#features" style="background:transparent;border:1px solid rgba(255,255,255,0.06);">Explore features</a>
+          <a class="btn" href="#contact" style="background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#041022">Start free</a>
+        </div>
+
+        <div class="grid" id="features" style="margin-top:28px">
+          <div class="card">
+            <h3>Market Updates</h3>
+            <div class="small">Live indices, commodity prices, and crypto charts updated in real-time.</div>
+          </div>
+          <div class="card">
+            <h3>Investment Tools</h3>
+            <div class="small">Portfolio calculator, SIP return tools, loan EMI estimator & more.</div>
+          </div>
+          <div class="card">
+            <h3>Financial Education</h3>
+            <div class="small">Simple guides on stocks, mutual funds, taxes, insurance, and budgeting.</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="mockup">
+        <div class="screen">
+          Live preview
+        </div>
+        <div style="display:flex; gap:8px; margin-top:12px">
+          <div class="glass" style="min-width:110px">Nifty 50 Chart</div>
+          <div class="glass" style="min-width:110px">Gold Rates</div>
+        </div>
+      </aside>
+    </section>
+
+    <section style="margin-top:34px">
+      <h2 style="margin:0 0 12px">Financial Snapshots</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px">
+        <div style="height:120px; border-radius:8px; background:linear-gradient(180deg,#072a3b,#03202b)"></div>
+        <div style="height:120px; border-radius:8px; background:linear-gradient(180deg,#1b1638,#091428)"></div>
+        <div style="height:120px; border-radius:8px; background:linear-gradient(180deg,#02304a,#021424)"></div>
+      </div>
+    </section>
+
+    <section id="mutualfunds" style="margin-top:36px">
+      <h2>Mutual Funds</h2>
+      <p class="small">Explore top SIP plans, fund categories, return calculators, and expense ratios.</p>
+    </section>
+
+    <section id="ipo" style="margin-top:36px">
+      <h2>IPO</h2>
+      <p class="small">Upcoming, ongoing, and recently listed IPOs with GMP, allotment status and analysis.</p>
+    </section>
+
+    <section id="fno" style="margin-top:36px">
+      <h2>F&O (Derivatives)</h2>
+      <p class="small">Options chain, futures data, open interest analysis, and strategy tools.</p>
+    </section>
+
+    <section id="contact" style="margin-top:36px">
+      <h2>Contact</h2>
+      <p class="small">Simple contact form (example only) — if you deploy on Netlify you can enable Netlify Forms without extra backend.</p>
+      <form class="card" style="margin-top:12px" onsubmit="event.preventDefault();alert('Demo: form submit intercepted — integrate real backend to handle submissions')">
+        <label style="display:block; margin-bottom:8px">Name<br><input required style="width:100%; padding:10px; margin-top:6px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit"></label>
+        <label style="display:block; margin-bottom:8px">Email<br><input required type="email" style="width:100%; padding:10px; margin-top:6px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit"></label>
+        <label style="display:block; margin-bottom:8px">Message<br><textarea required style="width:100%; padding:10px; margin-top:6px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit"></textarea></label>
+        <div style="text-align:right"><button class="btn" style="background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#041022; padding:10px 16px; border-radius:10px">Send</button></div>
+      </form>
+    </section>
+
+    <footer>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px">
+        <div>&copy; <strong>Stockssutra.com</strong> — Built with a single HTML file</div>
+        <div style="font-size:13px; color:rgba(230,238,248,0.6)">Made for demo • 2025</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Tiny script: mobile menu or small interactions can go here
+    (function(){
+      // smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          var target = document.querySelector(this.getAttribute('href'));
+          if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+        })
+      })
+    })();
+  </script>
+</body>
+</html>
